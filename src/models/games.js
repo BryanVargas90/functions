@@ -2,21 +2,17 @@ import { Schema } from "mongoose";
 import { model } from "mongoose";
 
 const SessionSchema = new Schema({
+  host: {
+    type: String || Number,
+  },
   game: {
-    type: String,
-    required: true,
+    type: String || Number,
   },
-  platform: {
-    type: String,
-    required: true,
+  date: {
+    type: String || Number,
   },
-  rating: {
-    type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-    required: true,
+  time: {
+    type: String || Number,
   },
 });
 

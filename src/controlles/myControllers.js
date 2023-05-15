@@ -2,11 +2,12 @@ import Session from "../models/games.js";
 
 // Add a new document to the collection
 export const createAppointment = async (req, res) => {
+  console.log(req.body);
   const session = new Session({
+    host: req.body.host,
     game: req.body.game,
-    platform: req.body.platform,
-    rating: req.body.rating,
-    image: req.body.image,
+    date: req.body.date,
+    time: req.body.time,
   });
   const newSession = await session.save();
   res.status(201).send(newSession);
